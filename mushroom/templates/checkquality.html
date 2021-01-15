@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CHECK QUALITY</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background:whitesmoke;
+            margin:0;
+            
+            
+        }
+        nav{
+            background: #594848;
+            width: 100%;
+            overflow: auto;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li{
+            float: left;
+        }
+        nav a{
+        
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background: #594848;
+            font-size: 17px;
+            color: white;
+            padding: 20px 10px;
+            font-family: Arial, Helvetica, sans-serif;
+    
+        }
+        nav a:hover{
+            background: rgb(238, 241, 241);
+            color: black;
+        }
+        body p1{
+        
+            font-size: 60px;
+            font-weight: 800;
+            background: #b8aaaa;
+            width: 100%;
+            overflow: auto;
+            display: block;
+        }
+    
+        footer{
+            padding: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            background: #594848;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+        }
+        .row{
+            font-size: large;   
+        }
+    
+
+
+    </style>
+        
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href ="{{url_for('types')}}">TYPES</a></li>
+            <li><a href ="{{url_for('healthtips')}}">HEALTH TIPS</a></li>
+            <li><a href ="{{url_for('home')}}">HOME</a></li>
+        </ul>
+    </nav>  
+    
+    <center><p1>CHECK QUALITY OF MUSHROOMS:</p1></center>
+    <h1>Please enter the following values:</h1>
+    <form action="{{ url_for('predict')}}" method="POST">
+        <div class="row">
+            <label>CAP SHAPE: </label> </br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter cap-shape: bell(b)=0, conical(c)=1, convex=5, flat=2, knobbed=3, sunken=4 " name="cap-shape" required></br>
+            <label>CAP-SURFACE: </label> </br>
+            <input type="text" style="background-color:#DCDCDC; height:40px"  size="150"placeholder="Enter cap-surface: fibrous=0, grooves=1, scaly=3, smooth=2 " name="cap-surface" required></br>
+            <label>CAP-COLOR: : </label> </br>
+            <input type="text"  style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter cap-colour:brown=4, buff=0,cinnamon=1,gray=3,green=6,pink=5,purple=7,red=2,white=8,yellow=9" name="cap-colour" required></br>
+            <label>BRUISES:: </label> </br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter bruises:: bruises=1, no=0 " name="bruises:" required></br>
+            <label>ODOUR:</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter odour:almond=0,anise=3,creosote=1,fishy=8,foul=2,musty=4,none=5,pungent=6,spicy=7"name="odour"required></br>
+            <label>GILL-ATTACHMENT</label></br>
+            <input type="text"  style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter gill-attachment: attached=0, free=1"name="gill-attachment"required></br>
+            <label>GILL-SPACING</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px"  size="150" placeholder="Enter gill-spacing: close=0, crowded=1"name="gill-space"required></br>
+            <label>GILL-SIZE</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter gill-size: broad=0, narrow=1 "name=" gill-size"required></br>
+            <label>GILL COLOR</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150"  placeholder="Enter gill-colour: black=4, brown=5, buff=0, chocolate=3, grey=2, green=8, orange=6,pink=7, purple=9, red=1, white=10, yellow=11 "name="gill-color"required></br>
+            <label>STALK SHAPE</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter stalk-shape: enlarging=0, tapering=1"name="stalk-shape"required></br>
+            <label>STALK-SURFACE ABOVE RING</label></br>
+            <input type="text"  style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter stalk-surface-above-ring: fibrous=0, scaly=3, silky=1, smooth=2 "name="stalk-surface above ring"required></br>
+            <label>STALK SURFACE BELOW RING</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter stalk-surface-below-ring: fibrous=0, scaly=3, silky=1, smooth=2"name="stalk surface below ring"required></br>
+            <label>STALK COLOR ABOVE RING </label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter stalk-colour-above-ring:brown=4,buff=0,cinnamon=1,gray=3,orange=5,pink=6,red=2,white=7,yellow=8 "name="stalk color above ring"required></br>
+            <label>STALK COLOR BELOW RING</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter stalk-colour-below-ring:brown=4,buff=0,cinnamon=1,gray=3,orange=5,pink=6,red=2,white=7,yellow=8 "name="stalk color below ring"required></br>
+            <label>VEIL COLOR</label></br>
+            <input type="text" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter veil-colour: brown=0, orange=1, white=2, yellow=3"name="veil color"required></br>
+            <label>RING NUMBER</label></br>
+            <input type="" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter  ring-number: none=0, one=1, two=2" name="ring number"required></br>
+            <label>RING TYPE</label></br>
+            <input type="" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter ring-type: evanescent=0,flaring=1,large=2,none=0,pendant=4" name="ring type"required></br>
+            <label>SPORE PRINT COLOR</label></br>
+            <input type="" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter spore-print-colour:black=2,brown=3,buff=0,chocolate=1,green=5,orange=4,purple=6,white=7,yellow=8" name="spore print color"required></br>
+            <label>POPULTION</label></br>
+            <input type="" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter population:abundant=0,clustered=1,numerous=2,scattered=3,several=4,solitary=5" name="population"required></br>
+            <label>HABITAT</label></br>
+            <input type="" style="background-color:#DCDCDC; height:40px" size="150" placeholder="Enter  habitat: grasses=1, leaves=2, meadows=3, paths=4, urban=5, waste=6,woods=0" name="habitat"required></br>
+             
+            
+            
+            <button type="submit" style="background-color:#DCDCDC; height:40px" >Predict</button>
+        </div>
+    </form>  
+<br>
+<br>
+  
+    
+</body>
+</html>

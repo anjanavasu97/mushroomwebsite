@@ -1,0 +1,72 @@
+<!-- {%extends "checkquality.html"%} -->
+
+<!-- {%block content%} -->
+
+
+<html>
+    <head>
+        <title>result</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                background:rgb(216, 194, 194);
+            }
+            body h4{
+                font-size: large;
+                font-weight: bolder;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                display: block;
+                
+                
+            }
+            nav{
+                background: #594848;
+                width: 100%;
+                overflow: auto;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            li{
+                float: left;
+            }
+            nav a{
+                
+                display: block;
+                text-decoration: none;
+                text-align: center;
+                background: #594848;
+                font-size: 17px;
+                color: white;
+                padding: 20px 10px;
+                font-family: Arial, Helvetica, sans-serif;
+            
+            }
+            nav a:hover{
+                background: rgb(238, 241, 241);
+                color: black;
+            }
+        </style>
+            
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href ="{{url_for('home')}}">HOME</a></li>
+                <li><a href ="{{url_for('healthtips')}}">HEALTH TIPS</a></li>
+                <li><a href ="{{url_for('checkquality')}}">CHECK QUALITY</a></li>
+                <li><a href ="{{url_for('types')}}">TYPES</a></li>
+            
+            </ul>
+        </nav>  
+        
+        <h4 id="result">{{ prediction_text}}
+        </h4>
+    </body>
+</html>
+<!-- {%endblock%} -->

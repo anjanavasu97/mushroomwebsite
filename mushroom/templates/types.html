@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>types</title>
+<style>
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background:whitesmoke;
+}
+nav{
+    background: #594848;
+    width: 100%;
+    overflow: auto;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li{
+    float: left;
+}
+nav a{
+    
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background: #594848;
+    font-size: 17px;
+    color: white;
+    padding: 20px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+nav a:hover{
+    background: rgb(238, 241, 241);
+    color: black;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    overflow: auto;
+}
+.gallery{
+    margin: 5px;
+    border: 1px solid white;
+    float: left;
+    width: 390px;
+}
+.gallery img{
+    width: 100%;
+    height: auto;
+}
+.desc{
+    padding: 15px;
+    text-align: center;
+}
+footer{
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    background: #594848;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href ="{{url_for('home')}}">HOME</a></li>
+            <li><a href ="{{url_for('healthtips')}}">HEALTH TIPS</a></li>
+            <li><a href ="{{url_for('checkquality')}}">CHECK QUALITY</a></li>
+        </ul>
+    </nav>  
+    <div class ="container">
+        <h2>Different types of mushrooms</h2>
+        <h3>1. Button Mushrooms</h3>
+        <img src="../static/images/whitebutton.jpg" alt="button">
+        <p>Button mushrooms are also called baby mushrooms or white mushrooms. Button mushrooms are by far the most common type of mushroom that you’re almost guaranteed to find in grocery stores.
+        They’re sliced up and used as a topping on pizzas, in spaghetti sauces, and most other dishes that use mushrooms.</p>
+        
+        <h3>2. Cremini Mushrooms</h3>
+        <img src="../static/images/crimini.jpg" height:="5";class="center">
+        <p>Cremini mushrooms, also called crimini mushrooms, are actually part of the same species as button mushrooms (Agaricus bisporus), but are a brown variation with a slightly deeper flavour.</p>
+        
+        <h3>3. Portobello Mushrooms</h3>
+        <img src="../static/images/portabella.jpg" height:="5";class="center"/>
+        <p>Portobellos are the final full-grown stage of the button mushroom’s life.These mushrooms are much larger than cremini or button mushrooms and have a more meaty texture, but still retain a mild flavor. They have their cap fully open, exposing the dark gills underneath.Portobellos are large enough to be used as vegetarian burgers or stuffed with other ingredients, and are often baked instead of fried.</p>
+        
+        <h3>4. Oyster M Cep mushrooms</h3>
+        <img src="../static/images/oyster.jpg" height:="5";class="center"/>
+        <p>Oyster M Cep mushrooms are most commonly used in Italian cooking.</p>       
+        
+        <h3>10. Enoki Mushrooms</h3>
+        <img src="../static/images/enoki.jpg" height:="5";class="center"/>
+        <p>You can often spot enoki mushrooms in the supermarket.These mushrooms are most commonly used in Asian cooking. They come in large clusters of tiny mushrooms with very long stems and small caps. They go nicely in soups, especially ramen.</p>
+       
+        <h3>11. Royal Trumpet</h3>
+        <img src="../static/images/royal_trumpet.jpg" height:="5";class="center"/>
+        <p>Royal Trumpet is another mushroom native to East Asia, but they can also be found in Northern Europe.They are also known as white beech mushrooms. They add a rich umami flavor to dishes.</p>
+       
+        <h3>12. Shiitake Mushrooms</h3>
+        <img src="../static/images/shiitake.jpg" height:="5";class="center"/>
+        <p>Shiitake mushrooms are commonly used in Asian cuisine. They are also considered to have medicinal benefits in traditional Asian medicine</p>
+        
+        <h3>13. Maitake Mushrooms</h3>
+        <img src="../static/images/maitake.jpg" height:="5";class="center"/>
+        <p>Maitake mushrooms have been shown to boost the immune system. They also have a hypoglycemic effect that can help with lowering blood sugar and managing diabetes, and can also help with high cholesterol.</p>
+        
+</div>
+    </div>  
+    <footer>
+        All Rights reserved @Mushroom world
+    </footer>
+</body>
+</html>
